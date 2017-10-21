@@ -1,1 +1,174 @@
-<h1> Welcome To Abdul Console Laboratory </h1>
+<html>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Josefin
+
++Sans:400,400i,600,600i');
+html,body{
+  margin:0;
+  height:120%;
+  font-family: 'Josefin Sans', sans-serif;
+
+}
+.header{
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+  height:50vw;
+  min-height:400px;
+  max-height:550px;
+  min-width:300px;
+  color:#eee;
+}
+.header:after{
+  content:"";
+  width:100%;
+  height:40%;
+  position:absolute;
+  bottom:0;
+  left:0;
+  z-index:-1;
+ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba
+
+(27,32,48,1) 100%);
+}
+.header:before{
+  content:"";
+  width:100%;
+  height:100%;
+  position:absolute;
+  top:0;
+  left:0;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0) scale(1.0, 1.0);
+    transform: translateZ(0);
+  background:#1B2030 url(https://picsum.photos/200/300/?random) 
+
+top center no-repeat;
+  background-size:cover;
+  background-attachment:fixed;
+  animation: grow 60s  linear 10ms infinite;
+  transition:all 0.2s ease-in-out;
+  z-index:-2
+}
+.header a{
+  color:#eee
+}
+.menu{
+  display:block;
+  width:30px;
+  height:30px;
+  border:2px solid #fff;
+  border-radius:3px;
+  position:absolute;
+  right:20px;
+  top:20px;
+  text-decoration:none
+}
+.menu:after{
+  content:"";
+  display:block;
+  width:20px;
+  height:3px;
+  background:#fff;
+  position:absolute;
+  margin:0 auto;
+  top:5px;
+  left:0;
+  right:0;
+  box-shadow:0 8px, 0 16px
+}
+.logo{
+  border:2px solid #fff;
+  border-radius:3px;
+  text-decoration:none;
+  display:inline-block;
+  margin:20px;
+  padding:5px 10px;
+  font-weight:600;
+  font-size:1.2em;
+  box-sizing:border-box
+}
+.sides, .info{
+  flex: 0 0 auto;
+  width:50%
+}
+.info{
+  width:100%;
+  padding:15% 10% 0 10%;
+  text-align:center;
+  text-shadow:0 2px 3px rgba(0,0,0,0.2)
+}
+.author{
+  display:inline-block;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:url(http://avka.favim.com/372/372885-
+
+1508585145/avatar_90x90.jpg) center no-repeat;
+  background-size:cover;
+  box-shadow:0 2px 3px rgba(0,0,0,0.3);
+  margin-bottom:3px
+}
+.info h4, .meta{
+  font-size:0.7em
+}
+.meta{
+  font-style:italic;
+}
+@keyframes grow{
+  0% { transform:scale(1)}
+  50% { transform:scale(1.2)}
+}
+.content{  
+  padding:5% 10%;
+  text-align:justify
+}
+.btn{
+  color:#333;
+  border:2px solid;
+  border-radius:3px;
+  text-decoration:none;
+  display:inline-block;
+  padding:5px 10px;
+  font-weight:600
+}
+
+.twtr{
+  margin-top:100px
+}
+</style>
+
+
+
+
+<div class="header">
+  <div class="sides">
+    <a href="#" class="logo">Ai/Ui</a>
+  </div>
+  <div class="sides"> <a href="#" class="menu">-</a></div>
+  <div class="info">
+  <h4><a href="#category">Ai/Ui Development</a></h4>
+    <h1>Welcome To Abdul Console Laboratory</h1>
+    <div class="meta">
+      <a  href="https://twitter.com/AbdulConsole" target="_b" class="author"></a><br>
+      By <a href="https://twitter.com/AbdulConsole" target="_b">Abdul Console</a> on Oct 21, 2017
+    </div>
+  </div>
+</div>
+<section class="content">
+  <h1>The Abdul Console Artificial Intelligence Laboratory specializes in applied AI research and development.</h1>
+<p>Since its inception in 1991, different effort have been made and put in place to enrich variety of applied intelligent systems projects in the areas of transportation, Robotics Engineering, and electronics manufacturing optimization implementaion of artificial intelligence, and machine learning.</p>
+
+<p>This is a new lab setup with a different motive to other AI research grouparound the world in that our primary goal does not resolve only on Robotics Engineering Only. Instead our focus is On Application Of derived Al methodologies for solving real-world problems.</p>
+
+
+<p>With recent advances in artificial intelligence and computational power, we are now able to pose and solve much more computationally intensive questions. This recent shift in emphasis from purely theoretical work, to practical applications of these results has opened up a void which the UIC AI Lab has tried to fill. These days there is a demand for intelligent computational systems along with competent designers, both of which are products of the Lab. Results of our applied research projects exist not only in academic journals and technical reports but also as working systems which address national, industrial, business, and health care needs.</p>
+  <p align="center"><a href="https://twitter.com/AbdulConsole" class="btn twtr" target="_b">Follow Us On Twitter</a>
+  </p>
+</section>
+</html>
