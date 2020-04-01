@@ -1,0 +1,150 @@
+<html>
+<head>
+  <style>
+body
+  min-height: 100vh
+  padding: 0 10%
+  background-color: #111
+  color: #FFF
+  font-size: 2em
+  display: flex
+  align-items: center
+
+.blinking-cursor
+  pointer-events: none
+  user-select: none
+  animation: blink 1s steps(2, start) infinite
+  
+  @keyframes blink
+    to
+      visibility: hidden
+
+  </style>
+  <script>
+const elementNode = document.getElementById('type-text')
+let text = ''
+
+function updateNode () {
+  elementNode.innerText = text
+}
+
+function pushCharacter (character) {
+  text += character
+  updateNode()
+}
+
+function popCharacter () {
+  text = text.slice(0, text.length -1)
+  updateNode()
+}
+
+function clearText () {
+  text = ''
+  updateNode()
+}
+
+
+function wait (time) {
+  return new Promise(resolve => {
+    setTimeout(resolve, time)
+  })
+}
+
+function typeCharacter (character) {
+  return new Promise(resolve => {
+    const randomMsInterval = 100 * Math.random()
+    const msInterval = randomMsInterval < 50 ? 10 : randomMsInterval
+    
+    pushCharacter(character)
+    wait(msInterval).then(resolve)
+  })
+}
+
+function removeCharacter () {
+  return new Promise(resolve => {
+    const randomMsInterval = 100 * Math.random()
+    const msInterval = randomMsInterval < 50 ? 10 : randomMsInterval
+    
+    popCharacter()
+    wait(msInterval).then(resolve)
+  })
+}
+
+function typeText (text) {
+  return new Promise(resolve => {
+    function _type (index) {
+      typeCharacter(text[index]).then(() => {
+        if (index + 1 < text.length) _type(index + 1)
+        else resolve()
+      })
+    }
+    _type(0)
+  })
+}
+
+function removeText (amount) {
+  return new Promise(resolve => {
+    function _remove (index) {
+      removeCharacter().then(() => {
+        if (index + 1 < amount) _remove(index + 1)
+        else resolve()
+      })
+    }
+    _remove(0)
+  })
+}
+
+
+// Typing script ⌨
+
+function typeLoop() {
+  typeText('CSEC!')
+    .then(() => wait(2000))
+    .then(() => removeText(5))
+    .then(() => typeText('World!'))
+    .then(() => wait(2000))
+    .then(() => removeText(6))
+    
+    .then(() => typeText('AbdulConsole'))
+    .then(() => wait(2000))
+    .then(() => removeText(12))
+    
+    .then(() => typeText('DrC063!'))
+    .then(() => wait(2000))
+    .then(() => removeText(7))
+    
+    .then(() => typeText('Fahidah!'))
+    .then(() => wait(2000))
+    .then(() => removeText(8))
+    
+    .then(() => typeText('Dare5555!'))
+    .then(() => wait(2000))
+    .then(() => removeText(9))
+    
+    .then(() => typeText('JustOla!'))
+    .then(() => wait(2000))
+    .then(() => removeText(8))
+    
+    .then(() => typeText('World!'))
+    .then(() => wait(2000))
+    .then(() => removeText(6))
+    
+    .then(typeLoop)
+}
+
+wait(1000).then(() => {
+  clearText()
+  typeText('Hello, ').then(typeLoop)
+})
+
+  </script>
+</head>
+
+<body>
+
+<span id="type-text">...</span>
+<span class="blinking-cursor">_</span>
+
+
+</body>
+</html>
