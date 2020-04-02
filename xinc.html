@@ -1,6 +1,7 @@
 <html>
 <head>
   <style>
+    
 body{
   min-height: 100vh;
   padding: 0 10%;
@@ -20,64 +21,9 @@ body{
       visibility: hidden
     }
   }
-/*Nav ConSOLE css*/
-    
-section{
-  position:relative;
-  width:640px;
-  margin:50px auto;
-}
-nav{
-  width:100%;
-}
-nav ul li{
-  display:inline-block;
-  list-style:none;
-  width:160px;
-  text-align:center;
-  font-family:Helvetica, sans-serif;
-  border: 1px dashed rgba(255,255,255, 0);
-  color:#fff;
-  padding:10px 0 10px 0;
-  margin:-1px -5px -1px -1px;
-  cursor:pointer;
-  transition:all .2s;
-  -webkit-transition:all .2s;
-}
-nav ul li:hover{
-  /*border:1px dashed #fff;*/
-  background:rgba(255,255,255,.1);
-}
-nav ul{
-  border: 1px solid #fff;
-  position:absolute;
-  width:100%;
-  padding:0;
-  z-index:100;
-}
-nav div{
-  position:absolute;
-  left:0;
-  top:16px;
-  background: #fff;
-  width:162px;
-  height:40px;
-  z-index:99;
-}
-.active{
-  color:rgba(55, 186, 177, 1);
-}
+
   </style>
   <script>
-/*JS For NAVBAR*/
-$("nav ul li").click(function(){
-  var xcoord = $(this).data("xcoord");
-  
-  $("nav div").stop().animate({marginLeft:xcoord}, 500, "easeInOutExpo");
-  $(this).addClass("active");
-  $("nav ul li").not(this).removeClass("active");
-  
-});
     
 /*JS For text*/
 const elementNode = document.getElementById('type-text')
@@ -196,17 +142,7 @@ wait(1000).then(() => {
 </head>
 
 <body>
-<section>
-  <nav>
-    <div></div>
-    <ul>
-      <li data-xcoord="0px" class="active">Home</li>
-      <li data-xcoord="160px">About</li>
-      <li data-xcoord="320px">Contact</li>
-      <li data-xcoord="480px">Service</li>
-    </ul>
-  </nav>
-</section>
+
   
 <span id="type-text">...</span>
 <span class="blinking-cursor">_</span>
